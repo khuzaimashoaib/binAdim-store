@@ -1,3 +1,4 @@
+import 'package:binadim_store/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,8 +10,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.system,
+      theme: BATheme.lightTheme,
+      darkTheme: BATheme.darkTheme,
 
       home: Scaffold(
         backgroundColor: Colors.amber,
