@@ -1,0 +1,13 @@
+flutter_native_splash:
+  color: "#ffffff"
+  color_dark: "#272727"
+  image: assets/logos/ba-store-splash-logo-dark.png
+  image_dark: assets/logos/ba-store-splash-logo-light.png
+
+  android_12:
+    color: "#ffffff"
+    color_dark: "#272727"
+    image: assets/logos/ba-store-splash-logo-dark.png
+    image_dark: assets/logos/ba-store-splash-logo-light.png
+
+  web: false

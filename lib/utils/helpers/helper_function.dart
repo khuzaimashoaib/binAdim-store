@@ -101,7 +101,6 @@ class BAHelperFunction {
     return list.toSet().toList();
   }
 
-  /// Wraps widgets into rows with specified number of widgets per row
   static List<Widget> wrapWidgets(List<Widget> widgets, int rowSize) {
     final wrappedList = <Widget>[];
     for (var i = 0; i < widgets.length; i += rowSize) {
