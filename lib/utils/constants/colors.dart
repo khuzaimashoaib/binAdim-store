@@ -45,7 +45,7 @@ class BAColors {
   static const Color black = Color(0xFF232323); // Darkest shade
   static const Color darkerGrey = Color(0xFF4F4F4F); // Dark grey
   static const Color darkGrey = Color(0xFF939393); // Medium-dark grey
-  static const Color grey = Color(0xFFE0E0E0); // Base grey
+  static const Color grey = Color(0xFF9E9E9E); // Base grey
   static const Color softGrey = Color(0xFFF4F4F4); // Light grey
   static const Color lightGrey = Color(
     0xFFF9F9F9,

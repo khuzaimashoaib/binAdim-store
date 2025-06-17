@@ -1,7 +1,6 @@
-import 'package:binadim_store/features/authentication/screens/onboarding.dart';
+import 'package:binadim_store/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:binadim_store/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/get_core.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 class BAMainApp extends StatelessWidget {
@@ -15,7 +14,7 @@ class BAMainApp extends StatelessWidget {
       theme: BATheme.lightTheme,
       darkTheme: BATheme.darkTheme,
       home: Scaffold(
-        backgroundColor: Colors.amber,
+        // backgroundColor: Colors.amber,
         body: const OnBoardingScreen(),
       ),
     );

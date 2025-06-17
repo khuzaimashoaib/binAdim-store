@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class BAPricingCalculator {
   // Calculate Price based on tax and shipping
   static double calculateTotalPrice(double productPrice, String location) {

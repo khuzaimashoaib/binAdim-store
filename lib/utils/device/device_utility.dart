@@ -56,7 +56,7 @@ class BADeviceUtility {
     return MediaQuery.of(context).padding.top;
   }
 
-  static double getBottomNavigationBarHeight(BuildContext context) {
+  static double getBottomNavigationBarHeight() {
     return kBottomNavigationBarHeight;
   }
 
@@ -64,7 +64,7 @@ class BADeviceUtility {
     return kToolbarHeight;
   }
 
-  static double getKeyboardHeight(BuildContext context) {
+  static double getKeyboardHeight() {
     final mediaQuery = MediaQuery.of(Get.context!).viewInsets;
     return mediaQuery.bottom;
   }

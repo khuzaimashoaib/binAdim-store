@@ -1,3 +1,4 @@
+import 'package:binadim_store/utils/constants/colors.dart';
 import 'package:binadim_store/utils/theme/custom_themes/appbar_theme.dart';
 import 'package:binadim_store/utils/theme/custom_themes/bottom_sheet_theme.dart';
 import 'package:binadim_store/utils/theme/custom_themes/check_box_theme.dart';
@@ -15,14 +16,14 @@ class BATheme {
     useMaterial3: true,
     fontFamily: "Poppins",
     brightness: Brightness.light,
-    primaryColor: Colors.yellow,
+    primaryColor: BAColors.primaryColor,
     scaffoldBackgroundColor: Colors.white,
     textTheme: BATextTheme.lightTextTheme,
-    elevatedButtonTheme: BAElevatedButtonTheme.lightElevatedButtonTheme,
-    appBarTheme: BAAppBarTheme.lightAppBarTheme,
-    bottomSheetTheme: BABottomSheetTheme.lightBottomSheetTheme,
-    checkboxTheme: BACheckBoxTheme.lightCheckboxTheme,
     chipTheme: BAChipTheme.lightChipTheme,
+    appBarTheme: BAAppBarTheme.lightAppBarTheme,
+    checkboxTheme: BACheckBoxTheme.lightCheckboxTheme,
+    bottomSheetTheme: BABottomSheetTheme.lightBottomSheetTheme,
+    elevatedButtonTheme: BAElevatedButtonTheme.lightElevatedButtonTheme,
     outlinedButtonTheme: BAOutlinedButtonTheme.lightOutlinedButtonTheme,
     inputDecorationTheme: BATextFormFieldTheme.lightInputDecorationTheme,
   );
@@ -31,14 +32,14 @@ class BATheme {
     useMaterial3: true,
     fontFamily: "Poppins",
     brightness: Brightness.dark,
-    primaryColor: Colors.yellow,
+    primaryColor: BAColors.primaryColor,
     scaffoldBackgroundColor: Colors.black,
     textTheme: BATextTheme.darkTextTheme,
-    elevatedButtonTheme: BAElevatedButtonTheme.darkElevatedButtonTheme,
-    appBarTheme: BAAppBarTheme.darkAppBarTheme,
-    bottomSheetTheme: BABottomSheetTheme.darkBottomSheetTheme,
-    checkboxTheme: BACheckBoxTheme.darkCheckboxTheme,
     chipTheme: BAChipTheme.darkChipTheme,
+    appBarTheme: BAAppBarTheme.darkAppBarTheme,
+    checkboxTheme: BACheckBoxTheme.darkCheckboxTheme,
+    bottomSheetTheme: BABottomSheetTheme.darkBottomSheetTheme,
+    elevatedButtonTheme: BAElevatedButtonTheme.darkElevatedButtonTheme,
     outlinedButtonTheme: BAOutlinedButtonTheme.darkOutlinedButtonTheme,
     inputDecorationTheme: BATextFormFieldTheme.darkInputDecorationTheme,
   );

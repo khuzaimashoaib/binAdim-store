@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class BAImages {
   // App Logos
   static const String lightApplogo =
