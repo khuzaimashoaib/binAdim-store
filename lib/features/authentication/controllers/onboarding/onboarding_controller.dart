@@ -1,3 +1,4 @@
+import 'package:binadim_store/features/authentication/screens/login/login.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +22,7 @@ class OnBoardingController extends GetxController {
   /// Updates current index and jumps to next page
   void nextPage() {
     if (currentPageIndex.value == 2) {
-      // Get.to(page)
+      Get.offAll(() => const LoginScreen());
     } else {
       int nextPage = currentPageIndex.value + 1;
       pageController.jumpToPage(nextPage);

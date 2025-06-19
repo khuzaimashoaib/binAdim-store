@@ -1,13 +1,13 @@
 class BAImages {
   // App Logos
   static const String lightApplogo =
-      "assets/images/ba-store-splash-logo-light.png";
+      "assets/logos/ba-store-splash-logo-light.png";
   static const String darkApplogo =
       "assets/logos/ba-store-splash-logo-dark.png";
-
   // Social Icons
 
-  // static const String facebook = "assets/images/facebook.png";
+  static const String google = "assets/logos/google.png";
+  static const String facebook = "assets/logos/facebook.png";
   // static const String instagram = "assets/images/instagram.png";
   // static const String twitter = "assets/images/twitter.png";
   // static const String youtube = "assets/images/youtube.png";

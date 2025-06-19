@@ -11,7 +11,7 @@ class BAElevatedButtonTheme {
       backgroundColor: BAColors.primaryColor,
       disabledForegroundColor: BAColors.grey,
       disabledBackgroundColor: BAColors.grey,
-      side: const BorderSide(color: BAColors.primaryColor),
+      // side: const BorderSide(color: BAColors.primaryColor),
       padding: const EdgeInsets.symmetric(vertical: 18.0),
       textStyle: const TextStyle(
         fontSize: 16,

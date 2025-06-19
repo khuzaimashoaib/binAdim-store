@@ -1,4 +1,4 @@
-import 'package:binadim_store/features/authentication/controllers.onboarding/onboarding_controller.dart';
+import 'package:binadim_store/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:binadim_store/features/authentication/screens/onboarding/widgets/on_boarding_navigation.dart';
 import 'package:binadim_store/features/authentication/screens/onboarding/widgets/on_boarding_next_button.dart';
 import 'package:binadim_store/utils/constants/image_strings.dart';
