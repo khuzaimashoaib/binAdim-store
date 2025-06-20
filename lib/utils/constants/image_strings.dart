@@ -14,9 +14,14 @@ class BAImages {
 
   // Onboarding Images
   static const String onBoardingImage1 =
-      "assets/images/onboarding_images/onboarding_1.gif";
+      "assets/images/onboarding_images/onboarding1.png";
   static const String onBoardingImage2 =
-      "assets/images/onboarding_images/onboarding_1.gif";
+      "assets/images/onboarding_images/onboarding2.png";
   static const String onBoardingImage3 =
-      "assets/images/onboarding_images/onboarding_1.gif";
+      "assets/images/onboarding_images/onboarding3.png";
+
+  // Email Verify Images
+  static const String accCreated = "assets/images/email_verify/acc_success.png";
+  static const String emailVerify =
+      "assets/images/email_verify/email_verify.png";
 }

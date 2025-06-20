@@ -1,8 +1,12 @@
+import 'package:binadim_store/features/authentication/screens/signup/verify_email.dart';
 import 'package:binadim_store/features/authentication/screens/signup/widgets/b_a_terms_and_condition_check_box.dart';
 import 'package:binadim_store/utils/constants/sizes.dart';
 import 'package:binadim_store/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../../../../../utils/constants/colors.dart';
 
 class BASignupForm extends StatelessWidget {
   const BASignupForm({super.key, required this.dark});
@@ -19,6 +23,7 @@ class BASignupForm extends StatelessWidget {
             children: [
               Expanded(
                 child: TextFormField(
+                  cursorColor: BAColors.grey,
                   expands: false,
                   decoration: InputDecoration(
                     labelText: BATextStrings.firstName,
@@ -30,6 +35,7 @@ class BASignupForm extends StatelessWidget {
 
               Expanded(
                 child: TextFormField(
+                  cursorColor: BAColors.grey,
                   expands: false,
                   decoration: InputDecoration(
                     labelText: BATextStrings.lastName,
@@ -44,6 +50,7 @@ class BASignupForm extends StatelessWidget {
 
           // Username
           TextFormField(
+            cursorColor: BAColors.grey,
             expands: false,
             decoration: InputDecoration(
               labelText: BATextStrings.username,
@@ -54,6 +61,7 @@ class BASignupForm extends StatelessWidget {
 
           // Email
           TextFormField(
+            cursorColor: BAColors.grey,
             expands: false,
             decoration: InputDecoration(
               labelText: BATextStrings.email,
@@ -64,6 +72,7 @@ class BASignupForm extends StatelessWidget {
 
           // Phone Number
           TextFormField(
+            cursorColor: BAColors.grey,
             expands: false,
             decoration: InputDecoration(
               labelText: BATextStrings.phoneNumber,
@@ -74,6 +83,7 @@ class BASignupForm extends StatelessWidget {
 
           // Password
           TextFormField(
+            cursorColor: BAColors.grey,
             expands: false,
             decoration: InputDecoration(
               labelText: BATextStrings.password,
@@ -91,7 +101,7 @@ class BASignupForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () => Get.to(() => const VerifyEmailScreen()),
               child: Text(BATextStrings.createAccount),
             ),
           ),

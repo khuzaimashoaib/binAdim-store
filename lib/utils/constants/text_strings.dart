@@ -1,8 +1,8 @@
 class BATextStrings {
   // Onboarding Texts
-  static const String onBoardingTitle1 = "Choose your product";
+  static const String onBoardingTitle1 = "Choose your Product";
   static const String onBoardingTitle2 = "Select Payment Method";
-  static const String onBoardingTitle3 = "Deliver at your door step";
+  static const String onBoardingTitle3 = "Deliver at your Door Step";
 
   static const String onBoardingSubTitle1 =
       "Welcome to a World of Limitless Choices - Your Perfect Product Awaits!";
@@ -31,6 +31,7 @@ class BATextStrings {
   static const String orSignUpWith = "or sign up with";
   static const String agreeTo = "I agree to";
   static const String and = "and";
+  static const String baContinue = "Continue";
 
   static const String privacyPolicy = "Privacy Policy";
   static const String termsOfUse = "Terms of use";
@@ -53,4 +54,8 @@ class BATextStrings {
   static const String confirmEmail = "Verify your email address!";
   static const String confirmEmailSubTitle =
       "Congratulations! Your Account Awaits: Verify Your Email to Start Shopping and Experience a World of Unrivaled Deals and Personalized Offers.";
+  static const String yourAccCreatedTitle =
+      "Your Account Successfully Created!";
+  static const String yourAccCreatedSubTitle =
+      "Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!";
 }

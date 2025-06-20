@@ -1,4 +1,5 @@
 import 'package:binadim_store/features/authentication/screens/signup/signup.dart';
+import 'package:binadim_store/utils/constants/colors.dart';
 import 'package:binadim_store/utils/constants/sizes.dart';
 import 'package:binadim_store/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ class BALoginForm extends StatelessWidget {
           children: [
             // Email
             TextFormField(
+              cursorColor: BAColors.grey,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.direct_right),
                 labelText: BATextStrings.email,
@@ -27,6 +29,7 @@ class BALoginForm extends StatelessWidget {
 
             // Password
             TextFormField(
+              cursorColor: BAColors.grey,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.password_check),
                 labelText: BATextStrings.password,
