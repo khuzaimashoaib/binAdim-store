@@ -5,7 +5,6 @@ import 'package:binadim_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/get_utils.dart';
 
-import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/text_strings.dart';
 import '../../../../utils/helpers/helper_function.dart';
 
@@ -19,7 +18,7 @@ class BASignUp extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: dark ? BAColors.light : BAColors.dark),
+        iconTheme: IconThemeData(color: Theme.of(context).iconTheme.color),
       ),
       body: SingleChildScrollView(
         child: Padding(

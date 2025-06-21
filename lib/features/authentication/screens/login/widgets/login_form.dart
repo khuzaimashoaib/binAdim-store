@@ -1,10 +1,10 @@
+import 'package:binadim_store/features/authentication/screens/pass_configuration/forget_pass.dart';
 import 'package:binadim_store/features/authentication/screens/signup/signup.dart';
 import 'package:binadim_store/utils/constants/colors.dart';
 import 'package:binadim_store/utils/constants/sizes.dart';
 import 'package:binadim_store/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/utils.dart';
 import 'package:iconsax/iconsax.dart';
 
 class BALoginForm extends StatelessWidget {
@@ -39,10 +39,10 @@ class BALoginForm extends StatelessWidget {
 
             const SizedBox(height: BASizes.spaceBtwInputFields / 2),
 
+            // Remember Me & Forget Password
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Remember Me
                 Row(
                   children: [
                     Checkbox(value: true, onChanged: (value) {}),
@@ -50,7 +50,7 @@ class BALoginForm extends StatelessWidget {
                   ],
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => const ForgetPassword()),
                   child: const Text(BATextStrings.forgotPassword),
                 ),
               ],

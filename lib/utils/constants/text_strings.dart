@@ -32,6 +32,8 @@ class BATextStrings {
   static const String agreeTo = "I agree to";
   static const String and = "and";
   static const String baContinue = "Continue";
+  static const String submit = "Submit";
+  static const String done = "Done";
 
   static const String privacyPolicy = "Privacy Policy";
   static const String termsOfUse = "Terms of use";
