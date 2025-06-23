@@ -1,5 +1,6 @@
 import 'package:binadim_store/features/authentication/screens/pass_configuration/forget_pass.dart';
 import 'package:binadim_store/features/authentication/screens/signup/signup.dart';
+import 'package:binadim_store/navigation_menu.dart';
 import 'package:binadim_store/utils/constants/colors.dart';
 import 'package:binadim_store/utils/constants/sizes.dart';
 import 'package:binadim_store/utils/constants/text_strings.dart';
@@ -61,7 +62,9 @@ class BALoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(() => const NavigationMenu());
+                },
                 child: const Text(BATextStrings.signIn),
               ),
             ),
