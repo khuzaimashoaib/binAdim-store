@@ -1,4 +1,4 @@
-import 'package:binadim_store/common/widgets/custom_shapes/containers/b_a_circular_container.dart';
+import 'package:binadim_store/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:binadim_store/common/widgets/custom_shapes/curved_edges/b_a_curved_edge_widget.dart';
 import 'package:binadim_store/utils/constants/colors.dart';
 import 'package:flutter/material.dart';

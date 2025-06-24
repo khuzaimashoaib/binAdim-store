@@ -15,7 +15,7 @@ class OnBoardingSkip extends StatelessWidget {
     final dark = BAHelperFunction.isDarkMode(context);
 
     return Positioned(
-      top: BADeviceUtility.getAppBarHeight(context),
+      top: BADeviceUtility.getAppBarHeight(),
       right: BASizes.defaultSpace,
       child: TextButton(
         onPressed: () => controller.skipPage(),

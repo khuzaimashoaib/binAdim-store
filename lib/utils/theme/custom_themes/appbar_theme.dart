@@ -1,4 +1,7 @@
+import 'package:binadim_store/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../constants/sizes.dart';
 
 class BAAppBarTheme {
   BAAppBarTheme._();
@@ -9,12 +12,15 @@ class BAAppBarTheme {
     scrolledUnderElevation: 0,
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
-    iconTheme: IconThemeData(color: Colors.black, size: 24),
-    actionsIconTheme: IconThemeData(color: Colors.black, size: 24),
+    iconTheme: IconThemeData(color: BAColors.black, size: BASizes.iconMD),
+    actionsIconTheme: IconThemeData(
+      color: BAColors.black,
+      size: BASizes.iconMD,
+    ),
     titleTextStyle: TextStyle(
-      fontSize: 18.0,
+      fontSize: BASizes.fontSizeLG,
       fontWeight: FontWeight.w600,
-      color: Colors.black,
+      color: BAColors.black,
     ),
   );
 
@@ -24,12 +30,15 @@ class BAAppBarTheme {
     scrolledUnderElevation: 0,
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
-    iconTheme: IconThemeData(color: Colors.black, size: 24),
-    actionsIconTheme: IconThemeData(color: Colors.white, size: 24),
+    iconTheme: IconThemeData(color: BAColors.black, size: BASizes.iconMD),
+    actionsIconTheme: IconThemeData(
+      color: BAColors.white,
+      size: BASizes.iconMD,
+    ),
     titleTextStyle: TextStyle(
-      fontSize: 18.0,
+      fontSize: BASizes.fontSizeLG,
       fontWeight: FontWeight.w600,
-      color: Colors.white,
+      color: BAColors.white,
     ),
   );
 }
