@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../constants/colors.dart';
+
 class BATextTheme {
   BATextTheme._();
 
@@ -8,62 +10,62 @@ class BATextTheme {
     headlineLarge: const TextStyle(
       fontSize: 32.0,
       fontWeight: FontWeight.bold,
-      color: Colors.black,
+      color: BAColors.dark,
     ),
     headlineMedium: const TextStyle(
       fontSize: 24.0,
       fontWeight: FontWeight.w600,
-      color: Colors.black,
+      color: BAColors.dark,
     ),
     headlineSmall: const TextStyle(
       fontSize: 18.0,
       fontWeight: FontWeight.w600,
-      color: Colors.black,
+      color: BAColors.dark,
     ),
 
     // Title
     titleLarge: const TextStyle(
       fontSize: 16.0,
       fontWeight: FontWeight.w600,
-      color: Colors.black,
+      color: BAColors.dark,
     ),
     titleMedium: const TextStyle(
       fontSize: 16.0,
       fontWeight: FontWeight.w500,
-      color: Colors.black,
+      color: BAColors.dark,
     ),
     titleSmall: const TextStyle(
       fontSize: 16.0,
       fontWeight: FontWeight.w400,
-      color: Colors.black,
+      color: BAColors.dark,
     ),
 
     // Body
     bodyLarge: const TextStyle(
       fontSize: 14.0,
       fontWeight: FontWeight.w500,
-      color: Colors.black,
+      color: BAColors.dark,
     ),
     bodyMedium: const TextStyle(
       fontSize: 14.0,
       fontWeight: FontWeight.normal,
-      color: Colors.black,
+      color: BAColors.dark,
     ),
-    bodySmall: const TextStyle(
+    bodySmall: TextStyle(
       fontSize: 14.0,
       fontWeight: FontWeight.w500,
-      color: Color.fromRGBO(0, 0, 0, 0.5),
+      color: BAColors.dark.withValues(alpha: 0.5),
     ),
     // Label
     labelLarge: const TextStyle(
       fontSize: 12.0,
       fontWeight: FontWeight.w500,
-      color: Colors.black,
+      color: BAColors.dark,
     ),
-    labelMedium: const TextStyle(
+    labelMedium: TextStyle(
       fontSize: 12.0,
       fontWeight: FontWeight.w500,
-      color: Color.fromRGBO(0, 0, 0, 0.5),
+      color: BAColors.dark.withValues(alpha: 0.5),
     ),
   );
 
@@ -72,63 +74,63 @@ class BATextTheme {
     headlineLarge: const TextStyle(
       fontSize: 32.0,
       fontWeight: FontWeight.bold,
-      color: Colors.white,
+      color: BAColors.light,
     ),
     headlineMedium: const TextStyle(
       fontSize: 24.0,
       fontWeight: FontWeight.w600,
-      color: Colors.white,
+      color: BAColors.light,
     ),
     headlineSmall: const TextStyle(
       fontSize: 18.0,
       fontWeight: FontWeight.w600,
-      color: Colors.white,
+      color: BAColors.light,
     ),
 
     // Title
     titleLarge: const TextStyle(
       fontSize: 16.0,
       fontWeight: FontWeight.w600,
-      color: Colors.white,
+      color: BAColors.light,
     ),
     titleMedium: const TextStyle(
       fontSize: 16.0,
       fontWeight: FontWeight.w500,
-      color: Colors.white,
+      color: BAColors.light,
     ),
     titleSmall: const TextStyle(
       fontSize: 16.0,
       fontWeight: FontWeight.w400,
-      color: Colors.white,
+      color: BAColors.light,
     ),
 
     // Body
     bodyLarge: const TextStyle(
       fontSize: 14.0,
       fontWeight: FontWeight.w500,
-      color: Colors.white,
+      color: BAColors.light,
     ),
     bodyMedium: const TextStyle(
       fontSize: 14.0,
       fontWeight: FontWeight.normal,
-      color: Colors.white,
+      color: BAColors.light,
     ),
-    bodySmall: const TextStyle(
+    bodySmall: TextStyle(
       fontSize: 14.0,
       fontWeight: FontWeight.w500,
-      color: Color.fromRGBO(255, 255, 255, 0.5),
+      color: BAColors.light.withValues(alpha: 0.5),
     ),
 
     // Label
     labelLarge: const TextStyle(
       fontSize: 12.0,
       fontWeight: FontWeight.w500,
-      color: Colors.white,
+      color: BAColors.light,
     ),
-    labelMedium: const TextStyle(
+    labelMedium: TextStyle(
       fontSize: 12.0,
       fontWeight: FontWeight.w500,
-      color: Color.fromRGBO(255, 255, 255, 0.5),
+      color: BAColors.light.withValues(alpha: 0.5),
     ),
   );
 }
