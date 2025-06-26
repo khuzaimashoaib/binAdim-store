@@ -1,7 +1,11 @@
 import 'package:binadim_store/common/widgets/custom_shapes/containers/prim_header_container.dart';
 import 'package:binadim_store/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:binadim_store/common/widgets/image_text_widgets/vertical_image_text.dart';
 import 'package:binadim_store/common/widgets/texts/section_heading.dart';
 import 'package:binadim_store/features/shop/screens/home/widgets/home_appbar.dart';
+import 'package:binadim_store/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:binadim_store/utils/constants/colors.dart';
+import 'package:binadim_store/utils/constants/image_strings.dart';
 import 'package:binadim_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -36,10 +40,12 @@ class HomeScreen extends StatelessWidget {
                         BASectionHeading(
                           title: "Popular Categories",
                           showActionButton: false,
+                          textColor: BAColors.white,
                         ),
                         const SizedBox(height: BASizes.spaceBtwItems),
 
                         // Category Scroll
+                        BAHomeCategories(),
                       ],
                     ),
                   ),
