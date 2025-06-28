@@ -1,25 +1,31 @@
-import 'package:binadim_store/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../utils/constants/colors.dart';
+import '../../../../utils/constants/sizes.dart';
 
 class BACircularContainer extends StatelessWidget {
   const BACircularContainer({
     super.key,
     this.child,
-    this.width = 400,
-    this.height = 400,
-    this.radius = 400,
-    this.padding = 0,
+    this.width,
+    this.height,
+    this.padding,
     this.margin,
+    this.showBorder = false,
+    this.radius = BASizes.cardRadiusLg,
     this.bgColor = BAColors.white,
+    this.borderColor = BAColors.borderPrimary,
   });
 
   final double? width;
   final double? height;
-  final double padding;
-  final EdgeInsetsGeometry? margin;
   final double radius;
   final Widget? child;
-  final Color? bgColor;
+  final bool showBorder;
+  final EdgeInsetsGeometry? margin;
+  final EdgeInsetsGeometry? padding;
+  final Color borderColor;
+  final Color bgColor;
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +33,9 @@ class BACircularContainer extends StatelessWidget {
       width: width,
       height: height,
       margin: margin,
-      padding: EdgeInsets.all(padding),
+      padding: padding,
       decoration: BoxDecoration(
+        border: showBorder ? Border.all(color: borderColor) : null,
         borderRadius: BorderRadius.circular(radius),
         color: bgColor,
       ),

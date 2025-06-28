@@ -4,7 +4,7 @@ class BAColors {
   BAColors._();
 
   static const Color primaryColor = Color(0xFFfed700);
-  // static const Color secondary = Color(0xFFFFE24B);
+  static const Color secondaryColor = Color(0xFF44b71a);
   static const Color accent = Color(0xFFb0c7ff);
 
   // Text Colors

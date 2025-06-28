@@ -12,7 +12,7 @@ class BAPromoSlider extends StatelessWidget {
   const BAPromoSlider({super.key, required this.banners});
 
   final List<String> banners;
-
+  
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(HomeController());

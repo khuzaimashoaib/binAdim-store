@@ -1,13 +1,16 @@
-import 'package:binadim_store/common/widgets/custom_shapes/containers/prim_header_container.dart';
-import 'package:binadim_store/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:binadim_store/common/widgets/texts/section_heading.dart';
-import 'package:binadim_store/features/shop/screens/home/widgets/home_appbar.dart';
-import 'package:binadim_store/features/shop/screens/home/widgets/home_categories.dart';
-import 'package:binadim_store/features/shop/screens/home/widgets/home_promo_slider.dart';
-import 'package:binadim_store/utils/constants/colors.dart';
-import 'package:binadim_store/utils/constants/image_strings.dart';
-import 'package:binadim_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../common/widgets/custom_shapes/containers/prim_header_container.dart';
+import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
+import '../../../../common/widgets/layouts/grid_layout.dart';
+import '../../../../common/widgets/products/product_cards/product_card_vertical.dart';
+import '../../../../common/widgets/texts/section_heading.dart';
+import '../../../../utils/constants/colors.dart';
+import '../../../../utils/constants/image_strings.dart';
+import '../../../../utils/constants/sizes.dart';
+import 'widgets/home_appbar.dart';
+import 'widgets/home_categories.dart';
+import 'widgets/home_promo_slider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -57,11 +60,21 @@ class HomeScreen extends StatelessWidget {
             // Body
             Padding(
               padding: const EdgeInsets.all(BASizes.defaultSpace),
-              child: BAPromoSlider(
-                banners: [
-                  BAImages.onBoardingImage1,
-                  BAImages.onBoardingImage2,
-                  BAImages.onBoardingImage3,
+              child: Column(
+                children: [
+                  BAPromoSlider(
+                    banners: [
+                      BAImages.onBoardingImage1,
+                      BAImages.onBoardingImage2,
+                      BAImages.onBoardingImage3,
+                    ],
+                  ),
+                  const SizedBox(height: BASizes.spaceBtwSections),
+
+                  BAGridLayout(
+                    itemCount: 2,
+                    itemBuilder: (_, index) => const BAProductCardVertical(),
+                  ),
                 ],
               ),
             ),
