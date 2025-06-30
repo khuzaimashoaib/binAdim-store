@@ -1,4 +1,5 @@
 import 'package:binadim_store/features/shop/screens/home/home.dart';
+import 'package:binadim_store/features/shop/screens/store/store.dart';
 import 'package:binadim_store/utils/constants/colors.dart';
 import 'package:binadim_store/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +49,7 @@ class NavigationController extends GetxController {
 
   final pages = [
     const HomeScreen(),
-    const Center(child: Text('Shop')),
+    const StoreScreen(),
     const Center(child: Text('Whishlist')),
     const Center(child: Text('Profile')),
   ];

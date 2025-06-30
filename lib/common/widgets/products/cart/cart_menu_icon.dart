@@ -3,13 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 class BACartCounterIcon extends StatelessWidget {
-  const BACartCounterIcon({
-    super.key,
-    required this.iconColor,
-    required this.onPressed,
-  });
+  const BACartCounterIcon({super.key, this.iconColor, required this.onPressed});
 
-  final Color iconColor;
+  final Color? iconColor;
   final VoidCallback onPressed;
 
   @override

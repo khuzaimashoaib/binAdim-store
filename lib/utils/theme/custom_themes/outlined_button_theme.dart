@@ -1,4 +1,7 @@
+import 'package:binadim_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+
+import '../../constants/colors.dart';
 
 class BAOutlinedButtonTheme {
   BAOutlinedButtonTheme._(); // Private constructor to prevent instantiation
@@ -8,16 +11,19 @@ class BAOutlinedButtonTheme {
       OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           elevation: 0,
-          foregroundColor: Colors.black,
-          side: const BorderSide(color: Colors.yellow),
+          foregroundColor: BAColors.dark,
+          side: const BorderSide(color: BAColors.borderPrimary),
           textStyle: const TextStyle(
             fontSize: 16,
             color: Colors.black,
             fontWeight: FontWeight.w600,
           ),
-          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+          padding: const EdgeInsets.symmetric(
+            vertical: BASizes.buttonHeight,
+            horizontal: 20,
+          ),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(14),
+            borderRadius: BorderRadius.circular(BASizes.buttonRadius),
           ),
         ),
       );
@@ -27,16 +33,19 @@ class BAOutlinedButtonTheme {
       OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           // elevation: 0,
-          foregroundColor: Colors.white,
-          side: const BorderSide(color: Colors.yellowAccent),
+          foregroundColor: BAColors.light,
+          side: const BorderSide(color: BAColors.borderPrimary),
           textStyle: const TextStyle(
             fontSize: 16,
-            color: Colors.white,
+            color: BAColors.textWhite,
             fontWeight: FontWeight.w600,
           ),
-          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+          padding: const EdgeInsets.symmetric(
+            vertical: BASizes.buttonHeight,
+            horizontal: 20,
+          ),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(14),
+            borderRadius: BorderRadius.circular(BASizes.buttonRadius),
           ),
         ),
       );

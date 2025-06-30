@@ -1,4 +1,3 @@
-import 'package:binadim_store/utils/constants/colors.dart';
 import 'package:binadim_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +10,7 @@ class BARoundedImage extends StatelessWidget {
     this.width,
     this.height,
     this.fit = BoxFit.contain,
-    this.bgColor = BAColors.light,
+    this.bgColor,
     this.applyImageRadius = true,
     this.isNetworkImage = false,
     this.borderRadius = BASizes.spacingMD,
@@ -22,7 +21,7 @@ class BARoundedImage extends StatelessWidget {
   final String imageUrl;
   final bool applyImageRadius;
   final BoxBorder? border;
-  final Color bgColor;
+  final Color? bgColor;
   final BoxFit? fit;
   final EdgeInsetsGeometry? padding;
   final bool isNetworkImage;

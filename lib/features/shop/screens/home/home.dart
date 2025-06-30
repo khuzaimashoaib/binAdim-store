@@ -71,6 +71,9 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: BASizes.spaceBtwSections),
 
+                  BASectionHeading(title: "Popular Products", onPressed: () {}),
+                  const SizedBox(height: BASizes.spaceBtwItems),
+
                   BAGridLayout(
                     itemCount: 2,
                     itemBuilder: (_, index) => const BAProductCardVertical(),

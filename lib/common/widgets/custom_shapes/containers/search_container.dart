@@ -13,12 +13,14 @@ class BASearchContainer extends StatelessWidget {
     this.showBg = true,
     this.showBorder = true,
     this.onTap,
+    this.padding = const EdgeInsets.symmetric(horizontal: BASizes.spacingMD),
   });
 
   final String text;
   final IconData? icon;
   final bool showBg, showBorder;
   final VoidCallback? onTap;
+  final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class BASearchContainer extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: BASizes.defaultSpace),
+        padding: padding,
         child: Container(
           width: BADeviceUtility.getScreenWidth(context),
           padding: EdgeInsets.all(BASizes.spacingMD),
@@ -42,7 +44,7 @@ class BASearchContainer extends StatelessWidget {
           ),
           child: Row(
             children: [
-              Icon(icon, color: BAColors.darkerGrey),
+              Icon(icon, color: dark ? BAColors.darkerGrey : Colors.grey),
               const SizedBox(width: BASizes.spaceBtwItems),
               Text(text, style: Theme.of(context).textTheme.bodySmall),
             ],

@@ -33,7 +33,6 @@ class BAProductCardVertical extends StatelessWidget {
             // Thumbnail, Wishlist, Dicount Tag
             BACircularContainer(
               height: 180,
-
               padding: EdgeInsets.all(BASizes.spacingSM),
               bgColor: dark ? BAColors.dark : BAColors.light,
               child: Stack(
@@ -101,33 +100,36 @@ class BAProductCardVertical extends StatelessWidget {
                       ),
                     ],
                   ),
-                  // Spacer(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Price
-                      const BAProductPriceText(price: "2000"),
-                      // const /(width: BASizes.spacingXS),
-                      Container(
-                        decoration: const BoxDecoration(
-                          color: BAColors.grey,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(BASizes.cardRadiusMd),
-                            bottomRight: Radius.circular(
-                              BASizes.productImageRadius,
-                            ),
-                          ),
-                        ),
-                        child: const SizedBox(
-                          height: BASizes.iconLG * 1.2,
-                          width: BASizes.iconLG * 1.2,
-                          child: Icon(Iconsax.add, color: BAColors.white),
-                        ),
-                      ),
-                    ],
-                  ),
                 ],
               ),
+            ),
+
+            // Spacer(),
+            Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // Price
+                Padding(
+                  padding: const EdgeInsets.only(left: BASizes.spacingSM),
+                  child: const BAProductPriceText(price: "2000"),
+                ),
+                // const /(width: BASizes.spacingXS),
+                Container(
+                  decoration: const BoxDecoration(
+                    color: BAColors.dark,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(BASizes.cardRadiusMd),
+                      bottomRight: Radius.circular(BASizes.productImageRadius),
+                    ),
+                  ),
+                  child: const SizedBox(
+                    height: BASizes.iconLG * 1.2,
+                    width: BASizes.iconLG * 1.2,
+                    child: Icon(Iconsax.add, color: BAColors.white),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
