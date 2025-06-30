@@ -1,3 +1,4 @@
+import 'package:binadim_store/common/widgets/texts/brand_title_with_verified_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -84,22 +85,7 @@ class BAProductCardVertical extends StatelessWidget {
                     smallSize: true,
                   ),
                   const SizedBox(height: BASizes.spaceBtwItems / 2),
-                  Row(
-                    children: [
-                      Text(
-                        "Tamoor",
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(width: BASizes.spacingXS),
-                      Icon(
-                        Iconsax.verify5,
-                        color: BAColors.primaryColor,
-                        size: BASizes.iconXS,
-                      ),
-                    ],
-                  ),
+                  BABrandTitleWithVerifiedIcon(title: "Brand Name"),
                 ],
               ),
             ),

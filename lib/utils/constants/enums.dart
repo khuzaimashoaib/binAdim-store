@@ -1,6 +1,8 @@
 // Product size options
 enum ProductSize { small, medium, large }
 
+enum TextSizes { small, medium, large }
+
 // Order status tracking
 enum OrderStatus {
   processing, // Order is being prepared

@@ -1,8 +1,14 @@
 import 'package:binadim_store/common/widgets/appbar/appbar.dart';
+import 'package:binadim_store/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:binadim_store/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:binadim_store/common/widgets/images/circular_image.dart';
+import 'package:binadim_store/common/widgets/layouts/grid_layout.dart';
 import 'package:binadim_store/common/widgets/products/cart/cart_menu_icon.dart';
+import 'package:binadim_store/common/widgets/texts/brand_title_with_verified_icon.dart';
 import 'package:binadim_store/common/widgets/texts/section_heading.dart';
 import 'package:binadim_store/utils/constants/colors.dart';
+import 'package:binadim_store/utils/constants/enums.dart';
+import 'package:binadim_store/utils/constants/image_strings.dart';
 import 'package:binadim_store/utils/constants/sizes.dart';
 import 'package:binadim_store/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
@@ -44,12 +50,65 @@ class StoreScreen extends StatelessWidget {
                       padding: EdgeInsets.zero,
                     ),
                     SizedBox(height: BASizes.spaceBtwSections),
+
+                    // Featured Brands
                     BASectionHeading(
                       title: "Featured Brands",
                       showActionButton: true,
                       onPressed: () {},
                     ),
                     SizedBox(height: BASizes.spaceBtwItems / 1.5),
+                    BAGridLayout(
+                      itemCount: 4,
+                      mainAxisExtent: 80,
+                      itemBuilder: (_, index) {
+                        return GestureDetector(
+                          onTap: () {},
+                          child: BACircularContainer(
+                            padding: const EdgeInsets.all(BASizes.spacingSM),
+                            showBorder: true,
+                            bgColor: Colors.transparent,
+                            child: Row(
+                              children: [
+                                // Icon
+                                Flexible(
+                                  child: BACircularImage(
+                                    image: BAImages.darkApplogo,
+                                    isNetworkImage: false,
+                                    bgColor: Colors.transparent,
+                                    overlayColor:
+                                        BAHelperFunction.isDarkMode(context)
+                                        ? BAColors.white
+                                        : BAColors.black,
+                                  ),
+                                ),
+                                SizedBox(width: BASizes.spaceBtwItems / 2),
+                                Expanded(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      BABrandTitleWithVerifiedIcon(
+                                        title: "Nike",
+                                        brandTextStyle: TextSizes.large,
+                                      ),
+                                      Text(
+                                        "100 Products",
+                                        overflow: TextOverflow.ellipsis,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.labelMedium,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   ],
                 ),
               ),
