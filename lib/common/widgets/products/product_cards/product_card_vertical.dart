@@ -73,7 +73,6 @@ class BAProductCardVertical extends StatelessWidget {
               ),
             ),
             const SizedBox(height: BASizes.spaceBtwItems / 2),
-
             //  Card Details
             Padding(
               padding: const EdgeInsets.only(left: BASizes.spacingSM),
@@ -89,9 +88,9 @@ class BAProductCardVertical extends StatelessWidget {
                 ],
               ),
             ),
-
             // Spacer(),
             Spacer(),
+            // Price Row
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

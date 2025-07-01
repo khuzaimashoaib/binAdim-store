@@ -37,6 +37,7 @@ class BACircularContainer extends StatelessWidget {
       decoration: BoxDecoration(
         border: showBorder ? Border.all(color: borderColor) : null,
         borderRadius: BorderRadius.circular(radius),
+
         color: bgColor,
       ),
       child: child,

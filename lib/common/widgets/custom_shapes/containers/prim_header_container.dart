@@ -12,29 +12,31 @@ class BAPrimHeaderContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return BACurvedEdgeWidget(
       child: Container(
-        padding: EdgeInsets.only(bottom: 0),
         color: BAColors.primaryColor,
-        child: SizedBox(
-          height: 400,
-          child: Stack(
-            children: [
-              Positioned(
-                top: -150,
-                right: -250,
-                child: BACircularContainer(
-                  bgColor: BAColors.textWhite.withValues(alpha: 0.1),
-                ),
+        child: Stack(
+          children: [
+            Positioned(
+              top: -60,
+              right: -130,
+              child: BACircularContainer(
+                bgColor: BAColors.textWhite.withValues(alpha: 0.25),
+                width: 250,
+                height: 250,
+                radius: 200,
               ),
-              Positioned(
-                top: 100,
-                right: -300,
-                child: BACircularContainer(
-                  bgColor: BAColors.textWhite.withValues(alpha: 0.1),
-                ),
+            ),
+            Positioned(
+              top: 120,
+              right: -170,
+              child: BACircularContainer(
+                bgColor: BAColors.textWhite.withValues(alpha: 0.15),
+                width: 250,
+                height: 250,
+                radius: 200,
               ),
-              child,
-            ],
-          ),
+            ),
+            child,
+          ],
         ),
       ),
     );

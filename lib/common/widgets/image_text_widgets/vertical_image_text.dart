@@ -8,7 +8,7 @@ class BAVerticalImageText extends StatelessWidget {
     super.key,
     required this.title,
     required this.image,
-    this.bgColor = BAColors.white,
+    this.bgColor,
     this.textColor = BAColors.white,
     this.onTap,
   });
