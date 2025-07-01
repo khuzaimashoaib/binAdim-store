@@ -1,4 +1,7 @@
 import 'package:binadim_store/common/widgets/appbar/appbar.dart';
+import 'package:binadim_store/common/widgets/appbar/tabbar.dart';
+import 'package:binadim_store/common/widgets/brands/brand_card.dart';
+import 'package:binadim_store/common/widgets/brands/brand_showcase.dart';
 import 'package:binadim_store/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:binadim_store/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:binadim_store/common/widgets/images/circular_image.dart';
@@ -6,6 +9,7 @@ import 'package:binadim_store/common/widgets/layouts/grid_layout.dart';
 import 'package:binadim_store/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:binadim_store/common/widgets/texts/brand_title_with_verified_icon.dart';
 import 'package:binadim_store/common/widgets/texts/section_heading.dart';
+import 'package:binadim_store/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:binadim_store/utils/constants/colors.dart';
 import 'package:binadim_store/utils/constants/enums.dart';
 import 'package:binadim_store/utils/constants/image_strings.dart';
@@ -18,104 +22,85 @@ class StoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: BAAppBar(
-        title: Text("Store", style: Theme.of(context).textTheme.headlineMedium),
-        actions: [BACartCounterIcon(onPressed: () {})],
-      ),
-      body: NestedScrollView(
-        headerSliverBuilder: (_, isBoxScrolled) {
-          return [
-            SliverAppBar(
-              pinned: true,
-              floating: true,
-              backgroundColor: BAHelperFunction.isDarkMode(context)
-                  ? BAColors.black
-                  : BAColors.white,
-              expandedHeight: 440,
-              automaticallyImplyLeading: false,
+    return DefaultTabController(
+      length: 5,
+      child: Scaffold(
+        appBar: BAAppBar(
+          title: Text(
+            "Store",
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
+          actions: [BACartCounterIcon(onPressed: () {})],
+        ),
+        body: NestedScrollView(
+          headerSliverBuilder: (_, isBoxScrolled) {
+            return [
+              SliverAppBar(
+                pinned: true,
+                floating: true,
+                backgroundColor: BAHelperFunction.isDarkMode(context)
+                    ? BAColors.black
+                    : BAColors.white,
+                expandedHeight: 440,
+                automaticallyImplyLeading: false,
 
-              flexibleSpace: Padding(
-                padding: EdgeInsetsGeometry.all(BASizes.defaultSpace),
-                child: ListView(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: [
-                    // Search Bar
-                    SizedBox(height: BASizes.spaceBtwItems),
-                    BASearchContainer(
-                      text: "Search in Store",
-                      showBorder: true,
-                      showBg: false,
-                      padding: EdgeInsets.zero,
-                    ),
-                    SizedBox(height: BASizes.spaceBtwSections),
+                flexibleSpace: Padding(
+                  padding: EdgeInsetsGeometry.all(BASizes.defaultSpace),
+                  child: ListView(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    children: [
+                      // Search Bar
+                      SizedBox(height: BASizes.spaceBtwItems),
+                      BASearchContainer(
+                        text: "Search in Store",
+                        showBorder: true,
+                        showBg: false,
+                        padding: EdgeInsets.zero,
+                      ),
+                      SizedBox(height: BASizes.spaceBtwSections),
 
-                    // Featured Brands
-                    BASectionHeading(
-                      title: "Featured Brands",
-                      showActionButton: true,
-                      onPressed: () {},
-                    ),
-                    SizedBox(height: BASizes.spaceBtwItems / 1.5),
-                    BAGridLayout(
-                      itemCount: 4,
-                      mainAxisExtent: 80,
-                      itemBuilder: (_, index) {
-                        return GestureDetector(
-                          onTap: () {},
-                          child: BACircularContainer(
-                            padding: const EdgeInsets.all(BASizes.spacingSM),
-                            showBorder: true,
-                            bgColor: Colors.transparent,
-                            child: Row(
-                              children: [
-                                // Icon
-                                Flexible(
-                                  child: BACircularImage(
-                                    image: BAImages.darkApplogo,
-                                    isNetworkImage: false,
-                                    bgColor: Colors.transparent,
-                                    overlayColor:
-                                        BAHelperFunction.isDarkMode(context)
-                                        ? BAColors.white
-                                        : BAColors.black,
-                                  ),
-                                ),
-                                SizedBox(width: BASizes.spaceBtwItems / 2),
-                                Expanded(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      BABrandTitleWithVerifiedIcon(
-                                        title: "Nike",
-                                        brandTextStyle: TextSizes.large,
-                                      ),
-                                      Text(
-                                        "100 Products",
-                                        overflow: TextOverflow.ellipsis,
-                                        style: Theme.of(
-                                          context,
-                                        ).textTheme.labelMedium,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        );
-                      },
-                    ),
+                      // Featured Brands
+                      BASectionHeading(
+                        title: "Featured Brands",
+                        showActionButton: true,
+                        onPressed: () {},
+                      ),
+                      SizedBox(height: BASizes.spaceBtwItems / 1.5),
+                      BAGridLayout(
+                        itemCount: 4,
+                        mainAxisExtent: 80,
+                        itemBuilder: (_, index) {
+                          return BABrandCard(showBorder: false);
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+
+                // Sliver Tab Bar
+                bottom: const BATabBar(
+                  tabs: [
+                    Tab(child: Text("Panasonic")),
+                    Tab(child: Text("Panasonic")),
+                    Tab(child: Text("Panasonic")),
+                    Tab(child: Text("Panasonic")),
+                    Tab(child: Text("Panasonic")),
                   ],
                 ),
               ),
-            ),
-          ];
-        },
-        body: Container(),
+            ];
+          },
+          body: TabBarView(
+            children: [
+              BACategoryTab(),
+              BACategoryTab(),
+              BACategoryTab(),
+              BACategoryTab(),
+              BACategoryTab(),
+            ],
+          ),
+        ),
       ),
     );
   }
