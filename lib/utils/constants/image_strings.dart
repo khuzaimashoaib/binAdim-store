@@ -24,4 +24,8 @@ class BAImages {
   static const String accCreated = "assets/images/email_verify/acc_success.png";
   static const String emailVerify =
       "assets/images/email_verify/email_verify.png";
+
+  // USer
+
+  static const String user = "assets/images/user/Khuzaima.jpg";
 }
