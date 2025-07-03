@@ -3,9 +3,12 @@ import 'package:binadim_store/common/widgets/custom_shapes/containers/prim_heade
 import 'package:binadim_store/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:binadim_store/common/widgets/list_tile/user_profile_tile.dart';
 import 'package:binadim_store/common/widgets/texts/section_heading.dart';
+import 'package:binadim_store/features/personalization/screens/profile/profile.dart';
 import 'package:binadim_store/utils/constants/colors.dart';
 import 'package:binadim_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:get/utils.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -32,7 +35,9 @@ class SettingsScreen extends StatelessWidget {
                   ),
 
                   // User Profile Card
-                  const BAUserProfileTile(),
+                  BAUserProfileTile(
+                    onPressed: () => Get.to(() => const ProfileScreen()),
+                  ),
                   const SizedBox(height: BASizes.spaceBtwSections),
                 ],
               ),
