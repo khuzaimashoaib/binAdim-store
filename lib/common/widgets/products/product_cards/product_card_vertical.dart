@@ -1,5 +1,8 @@
 import 'package:binadim_store/common/widgets/texts/brand_title_with_verified_icon.dart';
+import 'package:binadim_store/features/shop/screens/product_details/product_details.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:get/utils.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../utils/constants/colors.dart';
@@ -20,7 +23,7 @@ class BAProductCardVertical extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = BAHelperFunction.isDarkMode(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => const ProductDetailScreen()),
       child: Container(
         width: 180,
         padding: EdgeInsets.all(1),
@@ -55,7 +58,7 @@ class BAProductCardVertical extends StatelessWidget {
                         "20%",
                         style: Theme.of(
                           context,
-                        ).textTheme.labelLarge!.copyWith(color: BAColors.white),
+                        ).textTheme.labelLarge!.apply(color: BAColors.white),
                       ),
                     ),
                   ),

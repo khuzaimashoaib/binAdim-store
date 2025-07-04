@@ -5,6 +5,9 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../utils/constants/colors.dart';
+import '../../../utils/helpers/helper_function.dart';
+
 class BAAppBar extends StatelessWidget implements PreferredSizeWidget {
   const BAAppBar({
     super.key,
@@ -23,6 +26,7 @@ class BAAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = BAHelperFunction.isDarkMode(context);
     return Padding(
       padding: const EdgeInsetsGeometry.symmetric(
         horizontal: BASizes.spacingMD,
@@ -33,6 +37,7 @@ class BAAppBar extends StatelessWidget implements PreferredSizeWidget {
             ? IconButton(
                 onPressed: () => Get.back(),
                 icon: Icon(Iconsax.arrow_left),
+                color: dark ? BAColors.white : BAColors.dark,
               )
             : leadingIcon != null
             ? IconButton(onPressed: leadingOnPressed, icon: Icon(leadingIcon))
