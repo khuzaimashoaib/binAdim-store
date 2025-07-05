@@ -16,9 +16,10 @@ class BAColors {
   static const Color light = Color(0xFFF6F6F6);
   static const Color dark = Color(0xFF272727);
   static const Color primaryBackground = Color(0xFFF3F5FF);
+
   // Background Container Colors
   static const Color lightContainer = Color(0xFFF6F6F6);
-  static Color darkContainer = const Color.fromRGBO(255, 255, 255, 1);
+  static Color darkContainer = BAColors.white.withValues(alpha: 0.1);
 
   // Button Colors
   static const Color buttonPrimary = Color(0xFFfed700); // Primary button color
@@ -41,14 +42,13 @@ class BAColors {
   static const Color warning = Color(0xFFF57C00); // Warning state color
   static const Color info = Color(0xFF1976D2); // Informational state color
 
-  // Neutral Color Palette
-  static const Color black = Color(0xFF232323); // Darkest shade
-  static const Color darkerGrey = Color(0xFF4F4F4F); // Dark grey
-  static const Color darkGrey = Color(0xFF939393); // Medium-dark grey
-  static const Color grey = Color(0xFF9E9E9E); // Base grey
-  static const Color softGrey = Color(0xFFF4F4F4); // Light grey
-  static const Color lightGrey = Color(
-    0xFFF9F9F9,
-  ); // Lightest grey (fixed extra F)
-  static const Color white = Color(0xFFFFFFFF); // Pure white
+  // Neutral Color Palettestatic const Color black = Color(0xFF232323);
+  static const Color black = Color(0xFF232323);
+
+  static const Color darkerGrey = Color(0xFF4F4F4F);
+  static const Color darkGrey = Color(0xFF939393);
+  static const Color grey = Color(0xFFE0E0E0);
+  static const Color softGrey = Color(0xFFF4F4F4);
+  static const Color lightGrey = Color(0xFFF9F9F9);
+  static const Color white = Color(0xFFFFFFFF);
 }

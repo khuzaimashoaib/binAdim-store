@@ -1,21 +1,22 @@
+import 'package:binadim_store/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class BAChipTheme {
   BAChipTheme._();
 
   static ChipThemeData lightChipTheme = ChipThemeData(
-    disabledColor: Color.fromRGBO(158, 158, 158, 0.4),
-    labelStyle: const TextStyle(color: Colors.black),
-    selectedColor: Colors.yellow,
+    disabledColor: BAColors.grey.withValues(alpha: 0.4),
+    labelStyle: const TextStyle(color: BAColors.black),
+    selectedColor: BAColors.primaryColor,
     padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12),
-    checkmarkColor: Colors.white,
+    checkmarkColor: BAColors.white,
   );
 
-  static ChipThemeData darkChipTheme = const ChipThemeData(
-    disabledColor: Colors.grey,
-    labelStyle: TextStyle(color: Colors.white),
-    selectedColor: Colors.yellow,
+  static ChipThemeData darkChipTheme = ChipThemeData(
+    disabledColor: BAColors.grey.withValues(alpha: 0.4),
+    labelStyle: TextStyle(color: BAColors.white),
+    selectedColor: BAColors.primaryColor,
     padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 12),
-    checkmarkColor: Colors.white,
+    checkmarkColor: BAColors.white,
   );
 }
