@@ -73,7 +73,7 @@ class BAProductAttributes extends StatelessWidget {
         ),
         const SizedBox(height: BASizes.spaceBtwItems),
 
-        // Attributes
+        // Attributes Color
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -101,6 +101,8 @@ class BAProductAttributes extends StatelessWidget {
             ),
           ],
         ),
+        const SizedBox(height: BASizes.spaceBtwItems / 2),
+        // Attributes Size
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -112,11 +114,6 @@ class BAProductAttributes extends StatelessWidget {
                 BAChoiceChip(
                   text: "EU 41",
                   selected: true,
-                  onSelected: (value) {},
-                ),
-                BAChoiceChip(
-                  text: "EU 41",
-                  selected: false,
                   onSelected: (value) {},
                 ),
                 BAChoiceChip(

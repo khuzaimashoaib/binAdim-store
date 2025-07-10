@@ -1,19 +1,22 @@
 import 'package:binadim_store/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../../features/shop/screens/cart/cart.dart';
+
 class BACartCounterIcon extends StatelessWidget {
-  const BACartCounterIcon({super.key, this.iconColor, required this.onPressed});
+  const BACartCounterIcon({super.key, this.iconColor});
 
   final Color? iconColor;
-  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         IconButton(
-          onPressed: onPressed,
+          onPressed: () => Get.to(() => const CartScreen()),
           icon: Icon(Iconsax.shopping_bag, color: iconColor),
         ),
         Positioned(

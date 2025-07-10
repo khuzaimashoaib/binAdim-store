@@ -10,7 +10,13 @@ class AddNewAddressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BAAppBar(showBackArrow: true, title: Text("Add new Address")),
+      appBar: BAAppBar(
+        showBackArrow: true,
+        title: Text(
+          "Add new Address",
+          style: Theme.of(context).textTheme.headlineSmall,
+        ),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsetsGeometry.all(BASizes.defaultSpace),

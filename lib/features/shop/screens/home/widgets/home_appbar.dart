@@ -27,7 +27,7 @@ class BAHomeAppBar extends StatelessWidget {
           ),
         ],
       ),
-      actions: [BACartCounterIcon(onPressed: () {}, iconColor: BAColors.white)],
+      actions: [BACartCounterIcon(iconColor: BAColors.white)],
     );
   }
 }

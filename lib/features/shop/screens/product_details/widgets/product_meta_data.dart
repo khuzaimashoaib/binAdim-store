@@ -72,10 +72,11 @@ class BAProductMetaData extends StatelessWidget {
         Row(
           children: [
             BACircularImage(
-              image: BAImages.facebook,
+              image: BAImages.google,
               width: 32,
               height: 32,
               overlayColor: dark ? BAColors.white : BAColors.black,
+              bgColor: Colors.transparent,
             ),
             BABrandTitleWithVerifiedIcon(
               title: "Brand Name",
@@ -83,6 +84,7 @@ class BAProductMetaData extends StatelessWidget {
             ),
           ],
         ),
+        const SizedBox(height: BASizes.spaceBtwItems),
       ],
     );
   }
