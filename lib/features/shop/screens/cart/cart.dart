@@ -1,18 +1,15 @@
 import 'package:binadim_store/common/widgets/appbar/appbar.dart';
-import 'package:binadim_store/common/widgets/products/cart/cart_item.dart';
-import 'package:binadim_store/common/widgets/products/cart/product_qty_add_remove_btn.dart';
-import 'package:binadim_store/common/widgets/texts/product_price_text.dart';
+import 'package:binadim_store/features/shop/screens/cart/widgets/cart_items.dart';
+import 'package:binadim_store/features/shop/screens/checkout/checkout.dart';
 import 'package:binadim_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../utils/helpers/helper_function.dart';
+import 'package:get/get.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final dark = BAHelperFunction.isDarkMode(context);
     return Scaffold(
       appBar: BAAppBar(
         showBackArrow: true,
@@ -20,40 +17,13 @@ class CartScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(BASizes.defaultSpace),
-        child: ListView.separated(
-          shrinkWrap: true,
-          itemCount: 10,
-          separatorBuilder: (_, __) =>
-              SizedBox(height: BASizes.spaceBtwSections),
-          itemBuilder: (context, index) => Column(
-            children: [
-              BACartItem(),
-              SizedBox(height: BASizes.spaceBtwItems),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      // Extra Space
-                      SizedBox(width: 70),
-                      // Add remove button
-                      BAProductQtyAddRemoveBtn(dark: dark),
-                    ],
-                  ),
-
-                  // Product total price
-                  BAProductPriceText(price: "1000"),
-                ],
-              ),
-            ],
-          ),
-        ),
+        child: BACartItems(showAddRemoveButton: true),
       ),
 
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(BASizes.defaultSpace),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () => Get.to(() => const CheckoutScreen()),
           child: Text("Checkout Rs. 1000"),
         ),
       ),

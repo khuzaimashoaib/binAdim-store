@@ -4,13 +4,15 @@ import 'package:binadim_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-class BAProductQtyAddRemoveBtn extends StatelessWidget {
-  const BAProductQtyAddRemoveBtn({super.key, required this.dark});
+import '../../../../utils/helpers/helper_function.dart';
 
-  final bool dark;
+class BAProductQtyAddRemoveBtn extends StatelessWidget {
+  const BAProductQtyAddRemoveBtn({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final dark = BAHelperFunction.isDarkMode(context);
+
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
