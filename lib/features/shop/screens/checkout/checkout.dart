@@ -1,12 +1,18 @@
 import 'package:binadim_store/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:binadim_store/common/widgets/products/cart/coupon_code_widget.dart';
+import 'package:binadim_store/common/widgets/success_screen/success_screen.dart';
 import 'package:binadim_store/features/shop/screens/cart/widgets/cart_items.dart';
+import 'package:binadim_store/features/shop/screens/checkout/widgets/billing_address_section.dart';
+import 'package:binadim_store/features/shop/screens/checkout/widgets/billing_payment_section.dart';
+import 'package:binadim_store/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../common/widgets/appbar/appbar.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/helpers/helper_function.dart';
+import 'widgets/billing_amount_section.dart';
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({super.key});
@@ -39,10 +45,12 @@ class CheckoutScreen extends StatelessWidget {
               // Billing Section
               BACircularContainer(
                 showBorder: true,
+                padding: EdgeInsets.all(BASizes.spacingMD),
                 bgColor: dark ? BAColors.black : BAColors.white,
                 child: Column(
                   children: [
                     // Pricing
+                    BABillingAmountSection(),
                     SizedBox(height: BASizes.spaceBtwItems),
 
                     // Divider
@@ -50,8 +58,12 @@ class CheckoutScreen extends StatelessWidget {
                     SizedBox(height: BASizes.spaceBtwItems),
 
                     // Payment Method
+                    BABillingPaymentSection(),
+                    SizedBox(height: BASizes.spaceBtwItems),
 
                     // Address
+                    BABillingAddressSection(),
+                    SizedBox(height: BASizes.spaceBtwItems),
                   ],
                 ),
               ),
@@ -59,6 +71,14 @@ class CheckoutScreen extends StatelessWidget {
           ),
         ),
       ),
+
+      // bottomNavigationBar: Padding(
+      //   padding: const EdgeInsets.all(BASizes.defaultSpace),
+      //   child: ElevatedButton(
+      //     onPressed: () => Get.to(() => const SuccessScreen(image: BAImages.onBoardingImage1,)),
+      //     child: Text("Checkout Rs. 1000"),
+      //   ),
+      // ),
     );
   }
 }

@@ -47,6 +47,6 @@ flutter:
     - assets/images/onboarding_images/
     - assets/images/user/
     - assets/images/email_verify/
-    - assets/icons/
+    - assets/icons/payment_methods/
     - assets/fonts/
     - assets/logos/
