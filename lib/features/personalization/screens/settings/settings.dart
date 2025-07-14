@@ -5,6 +5,7 @@ import 'package:binadim_store/common/widgets/list_tile/user_profile_tile.dart';
 import 'package:binadim_store/common/widgets/texts/section_heading.dart';
 import 'package:binadim_store/features/personalization/screens/address/address.dart';
 import 'package:binadim_store/features/personalization/screens/profile/profile.dart';
+import 'package:binadim_store/features/shop/screens/orders/orders.dart';
 import 'package:binadim_store/utils/constants/colors.dart';
 import 'package:binadim_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -71,6 +72,7 @@ class SettingsScreen extends StatelessWidget {
                     icon: Iconsax.bag_tick,
                     title: 'My Orders',
                     subtitle: 'In-progress and Completed Orders',
+                    onTap: () => Get.to(() => const MyOrdersScreen()),
                   ),
 
                   BASettingsMenuTile(

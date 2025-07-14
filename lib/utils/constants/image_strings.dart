@@ -39,4 +39,6 @@ class BAImages {
       "assets/icons/payment_methods/master-card.png";
   static const String creditCard =
       "assets/icons/payment_methods/credit-card.png";
+  static const String successPaymnentIcon =
+      "assets/icons/payment_methods/successful_payment_icon.png";
 }

@@ -4,6 +4,7 @@ import 'package:binadim_store/common/widgets/success_screen/success_screen.dart'
 import 'package:binadim_store/features/shop/screens/cart/widgets/cart_items.dart';
 import 'package:binadim_store/features/shop/screens/checkout/widgets/billing_address_section.dart';
 import 'package:binadim_store/features/shop/screens/checkout/widgets/billing_payment_section.dart';
+import 'package:binadim_store/navigation_menu.dart';
 import 'package:binadim_store/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -72,13 +73,21 @@ class CheckoutScreen extends StatelessWidget {
         ),
       ),
 
-      // bottomNavigationBar: Padding(
-      //   padding: const EdgeInsets.all(BASizes.defaultSpace),
-      //   child: ElevatedButton(
-      //     onPressed: () => Get.to(() => const SuccessScreen(image: BAImages.onBoardingImage1,)),
-      //     child: Text("Checkout Rs. 1000"),
-      //   ),
-      // ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(BASizes.defaultSpace),
+        child: ElevatedButton(
+          onPressed: () => Get.to(
+            () => SuccessScreen(
+              image: BAImages.successPaymnentIcon,
+              title: "Payment Success!",
+              subtitle:
+                  "Your order has been placed successfully. Your items will be delivered to you soon. Thank you for shopping with us. ",
+              onPressed: () => Get.offAll(() => const NavigationMenu()),
+            ),
+          ),
+          child: Text("Checkout Rs. 1000"),
+        ),
+      ),
     );
   }
 }
