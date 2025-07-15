@@ -1,6 +1,8 @@
 import 'package:binadim_store/common/widgets/image_text_widgets/vertical_image_text.dart';
+import 'package:binadim_store/features/shop/screens/sub_category/sub_categories.dart';
 import 'package:binadim_store/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class BAHomeCategories extends StatelessWidget {
   const BAHomeCategories({super.key});
@@ -17,7 +19,7 @@ class BAHomeCategories extends StatelessWidget {
           return BAVerticalImageText(
             image: BAImages.lightApplogo,
             title: "shoes",
-            onTap: () {},
+            onTap: () => Get.to(() => const BASubCategoriesScreen()),
           );
         },
       ),

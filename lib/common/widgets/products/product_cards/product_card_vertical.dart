@@ -102,7 +102,7 @@ class BAProductCardVertical extends StatelessWidget {
                   padding: const EdgeInsets.only(left: BASizes.spacingSM),
                   child: const BAProductPriceText(price: "2000"),
                 ),
-                // const /(width: BASizes.spacingXS),
+                // Add to Cart
                 Container(
                   decoration: const BoxDecoration(
                     color: BAColors.dark,
