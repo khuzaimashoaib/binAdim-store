@@ -14,9 +14,10 @@ class BASubCategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: BAAppBar(
+        showBackArrow: true,
         title: Text(
           "Sports",
-          style: Theme.of(context).textTheme.headlineMedium,
+          // style: Theme.of(context).textTheme.headlineMedium,
         ),
       ),
 

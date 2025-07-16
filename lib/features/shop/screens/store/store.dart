@@ -5,11 +5,13 @@ import 'package:binadim_store/common/widgets/custom_shapes/containers/search_con
 import 'package:binadim_store/common/widgets/layouts/grid_layout.dart';
 import 'package:binadim_store/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:binadim_store/common/widgets/texts/section_heading.dart';
+import 'package:binadim_store/features/shop/screens/brands/all_brands.dart';
 import 'package:binadim_store/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:binadim_store/utils/constants/colors.dart';
 import 'package:binadim_store/utils/constants/sizes.dart';
 import 'package:binadim_store/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
@@ -58,7 +60,7 @@ class StoreScreen extends StatelessWidget {
                       BASectionHeading(
                         title: "Featured Brands",
                         showActionButton: true,
-                        onPressed: () {},
+                        onPressed: () => Get.to(() => const BAAllBrands()),
                       ),
                       SizedBox(height: BASizes.spaceBtwItems / 1.5),
                       BAGridLayout(

@@ -1,4 +1,6 @@
+import 'package:binadim_store/features/shop/screens/all_products/all_products.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../common/widgets/custom_shapes/containers/prim_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
@@ -72,7 +74,10 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: BASizes.spaceBtwSections),
 
-                  BASectionHeading(title: "Popular Products", onPressed: () {}),
+                  BASectionHeading(
+                    title: "Popular Products",
+                    onPressed: () => Get.to(() => const BAAllProducts()),
+                  ),
                   const SizedBox(height: BASizes.spaceBtwItems),
 
                   BAGridLayout(

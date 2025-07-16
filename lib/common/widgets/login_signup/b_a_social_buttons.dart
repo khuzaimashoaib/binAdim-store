@@ -19,8 +19,8 @@ class BASocialButtons extends StatelessWidget {
           child: IconButton(
             onPressed: () {},
             icon: Image(
-              width: BASizes.iconLG,
-              height: BASizes.iconLG,
+              width: BASizes.iconMD,
+              height: BASizes.iconMD,
               image: AssetImage(BAImages.google),
             ),
           ),
