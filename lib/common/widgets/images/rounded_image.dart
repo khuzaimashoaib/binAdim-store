@@ -12,7 +12,7 @@ class BARoundedImage extends StatelessWidget {
     this.fit = BoxFit.contain,
     this.bgColor,
     this.applyImageRadius = true,
-    this.isNetworkImage = false,
+    this.isNetworkImage = true,
     this.borderRadius = BASizes.spacingMD,
     required this.imageUrl,
   });
@@ -43,13 +43,17 @@ class BARoundedImage extends StatelessWidget {
         ),
         child: ClipRRect(
           borderRadius: applyImageRadius
-              ? BorderRadiusGeometry.circular(borderRadius)
+              ? BorderRadius.circular(borderRadius)
               : BorderRadius.zero,
           child: Image(
             fit: fit,
             image: isNetworkImage
-                ? NetworkImage(imageUrl)
-                : AssetImage(imageUrl) as ImageProvider,
+                ? (imageUrl.isNotEmpty
+                      ? NetworkImage(imageUrl)
+                      : const AssetImage("assets/images/user/Khuzaima.jpg"))
+                : AssetImage(imageUrl),
+            errorBuilder: (context, error, stackTrace) =>
+                Image.asset("assets/images/user/Khuzaima.jpg"),
           ),
         ),
       ),

@@ -80,10 +80,10 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: BASizes.spaceBtwItems),
 
-                  BAGridLayout(
-                    itemCount: 2,
-                    itemBuilder: (_, index) => const BAProductCardVertical(),
-                  ),
+                  // BAGridLayout(
+                  //   itemCount: 2,
+                  //   itemBuilder: (_, index) => const BAProductCardVertical(),
+                  // ),
                 ],
               ),
             ),

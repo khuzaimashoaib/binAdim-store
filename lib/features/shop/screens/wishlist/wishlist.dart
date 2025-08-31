@@ -33,10 +33,10 @@ class FavouriteScreen extends StatelessWidget {
           padding: EdgeInsets.all(BASizes.defaultSpace),
           child: Column(
             children: [
-              BAGridLayout(
-                itemCount: 4,
-                itemBuilder: (_, index) => BAProductCardVertical(),
-              ),
+              // BAGridLayout(
+              //   itemCount: 4,
+              //   itemBuilder: (_, index) => BAProductCardVertical(),
+              // ),
             ],
           ),
         ),

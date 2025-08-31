@@ -40,10 +40,10 @@ class BACategoryTab extends StatelessWidget {
               BASectionHeading(title: " You might like ", onPressed: () {}),
               const SizedBox(height: BASizes.spaceBtwItems),
 
-              BAGridLayout(
-                itemCount: 4,
-                itemBuilder: (_, index) => BAProductCardVertical(),
-              ),
+              // BAGridLayout(
+              //   itemCount: 4,
+              //   itemBuilder: (_, index) => BAProductCardVertical(),
+              // ),
             ],
           ),
         ),

@@ -6,7 +6,6 @@ import 'package:get/utils.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../utils/constants/colors.dart';
-import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/helpers/helper_function.dart';
 import '../../../styles/shadows.dart';
@@ -17,7 +16,22 @@ import '../../texts/product_price_text.dart';
 import '../../texts/product_title_text.dart';
 
 class BAProductCardVertical extends StatelessWidget {
-  const BAProductCardVertical({super.key});
+  final String imageUrl;
+  final String productName;
+  final String brandName;
+  final String price;
+  final String? discount; // optional
+  final bool isFavorite;
+
+  const BAProductCardVertical({
+    super.key,
+    required this.imageUrl,
+    required this.productName,
+    required this.brandName,
+    required this.price,
+    this.discount,
+    this.isFavorite = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +40,7 @@ class BAProductCardVertical extends StatelessWidget {
       onTap: () => Get.to(() => const ProductDetailScreen()),
       child: Container(
         width: 180,
-        padding: EdgeInsets.all(1),
+        padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
           boxShadow: [BAShadowStyle.verticalProductShadow],
           borderRadius: BorderRadius.circular(BASizes.productImageRadius),
@@ -34,65 +48,69 @@ class BAProductCardVertical extends StatelessWidget {
         ),
         child: Column(
           children: [
-            // Thumbnail, Wishlist, Dicount Tag
+            // Thumbnail, Wishlist, Discount Tag
             BACircularContainer(
               height: 180,
-              padding: EdgeInsets.all(BASizes.spacingSM),
+              padding: const EdgeInsets.all(BASizes.spacingSM),
               bgColor: dark ? BAColors.dark : BAColors.light,
               child: Stack(
                 children: [
-                  // Image
-                  const BARoundedImage(imageUrl: BAImages.darkApplogo),
+                  // Product Image
+                  BARoundedImage(
+                    imageUrl: imageUrl.isNotEmpty
+                        ? imageUrl
+                        : "https://via.placeholder.com/150",
+                  ),
 
-                  // Sale Tag
-                  Positioned(
-                    top: 12,
-                    child: BACircularContainer(
-                      radius: BASizes.spacingSM,
-                      bgColor: BAColors.secondaryColor.withValues(alpha: 0.8),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: BASizes.spacingSM,
-                        vertical: BASizes.spacingXS,
-                      ),
-                      child: Text(
-                        "20%",
-                        style: Theme.of(
-                          context,
-                        ).textTheme.labelLarge!.apply(color: BAColors.white),
+                  // Discount Tag (agar ho)
+                  if (discount != null && discount!.isNotEmpty)
+                    Positioned(
+                      top: 12,
+                      child: BACircularContainer(
+                        radius: BASizes.spacingSM,
+                        bgColor: BAColors.secondaryColor.withValues(alpha: 0.8),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: BASizes.spacingSM,
+                          vertical: BASizes.spacingXS,
+                        ),
+                        child: Text(
+                          "$discount%",
+                          style: Theme.of(
+                            context,
+                          ).textTheme.labelLarge!.apply(color: BAColors.white),
+                        ),
                       ),
                     ),
-                  ),
 
                   // Favorite Icon Button
                   Positioned(
                     top: 0,
                     right: 0,
                     child: BACircularIcon(
-                      icon: Iconsax.heart5,
-                      color: Colors.red,
+                      icon: isFavorite ? Iconsax.heart5 : Iconsax.heart,
+                      color: isFavorite ? Colors.red : BAColors.grey,
                     ),
                   ),
                 ],
               ),
             ),
             const SizedBox(height: BASizes.spaceBtwItems / 2),
-            //  Card Details
+
+            // Card Details
             Padding(
               padding: const EdgeInsets.only(left: BASizes.spacingSM),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const BAProductTitleText(
-                    title: "Product Name",
-                    smallSize: true,
-                  ),
+                  BAProductTitleText(title: productName, smallSize: true),
                   const SizedBox(height: BASizes.spaceBtwItems / 2),
-                  BABrandTitleWithVerifiedIcon(title: "Brand Name"),
+                  BABrandTitleWithVerifiedIcon(title: brandName),
                 ],
               ),
             ),
-            // Spacer(),
-            Spacer(),
+
+            const Spacer(),
+
             // Price Row
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -100,7 +118,7 @@ class BAProductCardVertical extends StatelessWidget {
                 // Price
                 Padding(
                   padding: const EdgeInsets.only(left: BASizes.spacingSM),
-                  child: const BAProductPriceText(price: "2000"),
+                  child: BAProductPriceText(price: price),
                 ),
                 // Add to Cart
                 Container(
