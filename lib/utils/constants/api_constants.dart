@@ -9,8 +9,24 @@ class BAApiConstants {
       "cs_291185e28704ee3ab43afe90b5f9deed2cc9ad76";
 
   // Get All Products
-  static String getProducts(int page, int perPage) =>
-      "$_baseUrl/products?consumer_key=$_consumerKey&consumer_secret=$_consumerSecret&page=$page&per_page=$perPage";
+  static String getProducts(
+    int page,
+    int perPage, [
+    String? orderBy,
+    String? order,
+    bool? featured,
+    bool? onSale,
+  ]) {
+    String url =
+        "$_baseUrl/products?consumer_key=$_consumerKey&consumer_secret=$_consumerSecret&page=$page&per_page=$perPage";
+
+    if (orderBy != null) url += "&orderby=$orderBy";
+    if (order != null) url += "&order=$order";
+    if (featured == true) url += "&featured=true";
+    if (onSale == true) url += "&on_sale=true";
+
+    return url;
+  }
 
   // Single Product API
   static String singleProduct(int id) =>

@@ -13,56 +13,70 @@ class BASortableProducts extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(ProductController());
 
-    return Obx(() {
-      if (controller.isLoading.value && controller.products.isEmpty) {
-        return const Center(child: CircularProgressIndicator());
-      }
-
-      return Column(
-        children: [
-          // Dropdown
-          DropdownButtonFormField(
+    return Column(
+      children: [
+        Obx(
+          () => DropdownButtonFormField(
+            initialValue: controller.selectedSort.value,
             decoration: InputDecoration(prefixIcon: Icon(Iconsax.sort)),
             items: [
-              "Name",
-              "High to Low",
-              "Low to High",
-              "Newest",
+              "Latest",
               "Sale",
-              "Top Rated",
+              "Featured",
+              "Price: Low to High",
+              "Price: High to Low",
             ].map((e) => DropdownMenuItem(value: e, child: Text(e))).toList(),
-            onChanged: (value) {},
-          ),
-          const SizedBox(height: BASizes.spaceBtwSections),
-          // Products
-          BAGridLayout(
-            itemCount: controller.products.length,
-            itemBuilder: (_, index) {
-              final product = controller.products[index];
-              return BAProductCardVertical(
-                imageUrl: (product.images.isNotEmpty)
-                    ? product.images.first.src
-                    : '',
-
-                productName: product.name,
-                brandName: product.brand, // agar null aaye toh default
-                price: product.price.toString(),
-                // discount: product.onSale.toString(), // agar discount field hai
-                isFavorite: false, // baad me wishlist se control kar lena
-              );
+            onChanged: (value) {
+              if (value != null) controller.changeSort(value);
             },
           ),
-          const SizedBox(height: BASizes.spaceBtwSections),
+        ),
+        const SizedBox(height: BASizes.spaceBtwSections),
 
-          if (controller.hasMore.value)
-            TextButton(
-              onPressed: () => controller.fetchProducts(),
-              child: controller.isLoading.value
-                  ? const CircularProgressIndicator()
-                  : const Text("Load More"),
-            ),
-        ],
-      );
-    });
+        Obx(() {
+          if (controller.isLoading.value && controller.products.isEmpty) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          if (controller.products.isEmpty) {
+            return const Center(child: Text("No Products found"));
+          }
+
+          // Products
+          return Column(
+            children: [
+              BAGridLayout(
+                itemCount: controller.products.length,
+                itemBuilder: (_, index) {
+                  final product = controller.products[index];
+                  return BAProductCardVertical(
+                    imageUrl: (product.images.isNotEmpty)
+                        ? product.images.first.src
+                        : '',
+
+                    productName: product.name,
+                    brandName: product.brand, // agar null aaye toh default
+                    price: product.price.toString(),
+                    // discount: product.onSale.toString(), // agar discount field hai
+                    isFavorite: false, // baad me wishlist se control kar lena
+                  );
+                },
+              ),
+              const SizedBox(height: BASizes.spaceBtwSections),
+
+              if (controller.hasMore.value)
+                TextButton(
+                  onPressed: () => controller.fetchProducts(),
+                  child:
+                      controller.isLoading.value &&
+                          controller.products.isNotEmpty
+                      ? const CircularProgressIndicator()
+                      : const Text("Load More"),
+                ),
+            ],
+          );
+        }),
+      ],
+    );
   }
 }

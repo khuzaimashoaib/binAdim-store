@@ -14,28 +14,52 @@ class ProductController extends GetxController {
   var currentPage = 1;
   final int perPage = 10;
 
+  /// Sorting & filter state
+  String? currentOrderBy;
+  String? currentOrder;
+  bool? currentFeatured;
+  bool? currentOnSale;
+  var selectedSort = "Latest".obs; // default value
+
   @override
   void onInit() {
     super.onInit();
-    fetchProducts();
+    sortProducts("Latest");
   }
 
   /// Fetch products (initial load or refresh)
-  Future<void> fetchProducts({bool refresh = false}) async {
+  Future<void> fetchProducts({
+    bool refresh = false,
+    String? orderBy,
+    String? order,
+    bool? featured,
+    bool? onSale,
+  }) async {
     try {
       if (refresh) {
         currentPage = 1;
         products.clear();
         hasMore.value = true;
+
+        // update current filters
+
+        currentOrderBy = orderBy;
+        currentOrder = order;
+        currentFeatured = featured;
+        currentOnSale = onSale;
+        isLoading.value = true;
       }
 
-      if (!hasMore.value || isLoading.value) return;
-
+      if (!hasMore.value) return;
       isLoading.value = true;
 
       final newProducts = await _repo.fetchProducts(
         page: currentPage,
         perPage: perPage,
+        orderBy: currentOrderBy,
+        order: currentOrder,
+        featured: currentFeatured,
+        onSale: currentOnSale,
       );
 
       if (newProducts.isEmpty) {
@@ -59,6 +83,32 @@ class ProductController extends GetxController {
     } finally {
       isLoading.value = false;
     }
+  }
+
+  final Map<String, Map<String, dynamic>> sortOptions = {
+    "Latest": {"orderBy": "date", "order": "desc"},
+    "Sale": {"onSale": true},
+    "Featured": {"featured": true},
+    "Price: Low to High": {"orderBy": "price", "order": "asc"},
+    "Price: High to Low": {"orderBy": "price", "order": "desc"},
+  };
+
+  void sortProducts(String option) {
+    final params = sortOptions[option];
+    if (params != null) {
+      fetchProducts(
+        refresh: true,
+        orderBy: params["orderBy"],
+        order: params["order"],
+        onSale: params["onSale"] ?? false,
+        featured: params["featured"] ?? false,
+      );
+    }
+  }
+
+  void changeSort(String value) {
+    selectedSort.value = value;
+    sortProducts(value); // yahan tum apna sorting call karoge
   }
 
   /// Fetch single product by ID

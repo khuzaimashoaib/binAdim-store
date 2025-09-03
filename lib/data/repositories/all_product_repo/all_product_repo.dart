@@ -8,8 +8,19 @@ class ProductRepository {
   Future<List<ProductModel>> fetchProducts({
     int page = 1,
     int perPage = 10,
+    String? orderBy,
+    String? order,
+    bool? featured,
+    bool? onSale,
   }) async {
-    final url = BAApiConstants.getProducts(page, perPage);
+    final url = BAApiConstants.getProducts(
+      page,
+      perPage,
+      orderBy,
+      order,
+      featured,
+      onSale,
+    );
 
     final response = await http.get(Uri.parse(url));
 
